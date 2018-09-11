@@ -47,11 +47,23 @@ process.stdout.write('\x1Bc');
 //   .then(results => console.log(results));
 
 // Q7
-knex()
-  .select()
-  .from('restaurants')
-  .where({ cuisine: 'Italian' })
-  .whereIn('address_zipcode', ['10012', '10013', '10014'])
-  .orderBy('name', 'ASC')
-  .limit(5)
-  .then(results => console.log(results));
+// knex()
+//   .select()
+//   .from('restaurants')
+//   .where({ cuisine: 'Italian' })
+//   .whereIn('address_zipcode', ['10012', '10013', '10014'])
+//   .orderBy('name', 'ASC')
+//   .limit(5)
+//   .then(results => console.log(results));
+
+// Q8
+knex
+  .insert({name: 'Byte Cafe',
+    borough: 'Brooklyn',
+    cuisine: 'coffee',
+    address_building_number: '123',
+    address_street: 'Atlantic Avenue',
+    address_zipcode: '11231'})
+  .into('restaurants')
+  .returning(['id', 'name'])
+  .then(console.log);  
