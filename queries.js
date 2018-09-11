@@ -83,29 +83,36 @@ process.stdout.write('\x1Bc');
 //   .then(console.log);
 
 // Q10
+// knex
+//   .insert([{
+//     name: 'A Cafe',
+//     borough: 'Bronx',
+//     cuisine: 'Italian',
+//     address_building_number: '1179',
+//     address_street: 'Eastern Avenue',
+//     address_zipcode: '12333'
+//   },{
+//     name: 'B Cafe',
+//     borough: 'Brooklyn',
+//     cuisine: 'Chinese',
+//     address_building_number: '11299',
+//     address_street: 'First Avenue',
+//     address_zipcode: '12354'
+//   }, {
+//     name: 'C Cafe',
+//     borough: 'Bronx',
+//     cuisine: 'Pizza',
+//     address_building_number: '1234',
+//     address_street: 'Second Avenue',
+//     address_zipcode: '12321'
+//   }])
+//   .into('restaurants')
+//   .returning(['id', 'name'])
+//   .then(console.log);
+
+// Q11
 knex
-  .insert([{
-    name: 'A Cafe',
-    borough: 'Bronx',
-    cuisine: 'Italian',
-    address_building_number: '1179',
-    address_street: 'Eastern Avenue',
-    address_zipcode: '12333'
-  },{
-    name: 'B Cafe',
-    borough: 'Brooklyn',
-    cuisine: 'Chinese',
-    address_building_number: '11299',
-    address_street: 'First Avenue',
-    address_zipcode: '12354'
-  }, {
-    name: 'C Cafe',
-    borough: 'Bronx',
-    cuisine: 'Pizza',
-    address_building_number: '1234',
-    address_street: 'Second Avenue',
-    address_zipcode: '12321'
-  }])
-  .into('restaurants')
-  .returning(['id', 'name'])
-  .then(console.log);
+  .from('restaurants')
+  .update({ name: 'DJ Reynolds Pub and Restaurant' })
+  .where({ nyc_restaurant_id: '30191841' })
+  .then(result => console.log(result));
