@@ -57,13 +57,27 @@ process.stdout.write('\x1Bc');
 //   .then(results => console.log(results));
 
 // Q8
+// knex
+//   .insert({name: 'Byte Cafe',
+//     borough: 'Brooklyn',
+//     cuisine: 'coffee',
+//     address_building_number: '123',
+//     address_street: 'Atlantic Avenue',
+//     address_zipcode: '11231'})
+//   .into('restaurants')
+//   .returning(['id', 'name'])
+//   .then(console.log);
+
+// Q9
 knex
-  .insert({name: 'Byte Cafe',
-    borough: 'Brooklyn',
-    cuisine: 'coffee',
-    address_building_number: '123',
-    address_street: 'Atlantic Avenue',
-    address_zipcode: '11231'})
+  .insert({
+    name: 'Bit Cafe',
+    borough: 'Queens',
+    cuisine: 'Doughnuts',
+    address_building_number: '1012',
+    address_street: 'Western Avenue',
+    address_zipcode: '12345'
+  })
   .into('restaurants')
   .returning(['id', 'name'])
-  .then(console.log);  
+  .then(console.log);
