@@ -6,7 +6,7 @@ const knex = require('knex')(DATABASE);
 // clear the console (just a convenience)
 process.stdout.write('\x1Bc');
 
-// Sample select 
+// Sample select
 knex
   .select()
   .from('restaurants')
