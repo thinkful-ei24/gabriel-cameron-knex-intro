@@ -13,8 +13,16 @@ process.stdout.write('\x1Bc');
 //   .then(results => console.log(results));
 
 // Q2
+// knex
+//   .select()
+//   .from('restaurants')
+//   .where({cuisine: 'Italian'})
+//   .then(results => console.log(results));
+
+// Q3
 knex
-  .select()
+  .select('id', 'name')
   .from('restaurants')
-  .where({cuisine: 'Italian'})
+  .where({ cuisine: 'Italian' })
+  .limit(10)
   .then(results => console.log(results));
