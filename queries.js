@@ -118,8 +118,15 @@ process.stdout.write('\x1Bc');
 //   .then(result => console.log(result));
 
 // Q12
-knex  
-  .from('grades')
+// knex
+//   .from('grades')
+//   .del()
+//   .where({id: 9})
+//   .then(console.log);
+
+// Q13
+knex
+  .from('restaurants')
   .del()
-  .where({id: 9})
+  .where({ id: 22 })
   .then(console.log);
