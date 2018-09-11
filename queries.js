@@ -20,9 +20,15 @@ process.stdout.write('\x1Bc');
 //   .then(results => console.log(results));
 
 // Q3
+// knex
+//   .select('id', 'name')
+//   .from('restaurants')
+//   .where({ cuisine: 'Italian' })
+//   .limit(10)
+//   .then(results => console.log(results));
+
+// Q4
 knex
-  .select('id', 'name')
+  .count()
   .from('restaurants')
-  .where({ cuisine: 'Italian' })
-  .limit(10)
   .then(results => console.log(results));
