@@ -41,7 +41,17 @@ process.stdout.write('\x1Bc');
 //   .then(results => console.log(results));
 
 // Q6
-knex('restaurants')
-  .where({cuisine: 'Thai', address_zipcode: '11372'})
-  .count()
+// knex('restaurants')
+//   .where({cuisine: 'Thai', address_zipcode: '11372'})
+//   .count()
+//   .then(results => console.log(results));
+
+// Q7
+knex()
+  .select()
+  .from('restaurants')
+  .where({ cuisine: 'Italian' })
+  .whereIn('address_zipcode', ['10012', '10013', '10014'])
+  .orderBy('name', 'ASC')
+  .limit(5)
   .then(results => console.log(results));
