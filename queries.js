@@ -28,7 +28,14 @@ process.stdout.write('\x1Bc');
 //   .then(results => console.log(results));
 
 // Q4
-knex
-  .count()
-  .from('restaurants')
-  .then(results => console.log(results));
+// knex
+//   .count()
+//   .from('restaurants')
+//   .where({ cuisine: 'Thai' })
+//   .then(results => console.log(results));
+
+// Q5
+// knex
+//   .count()
+//   .from('restaurants')
+//   .then(results => console.log(results));
