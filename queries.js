@@ -39,3 +39,9 @@ process.stdout.write('\x1Bc');
 //   .count()
 //   .from('restaurants')
 //   .then(results => console.log(results));
+
+// Q6
+knex('restaurants')
+  .where({cuisine: 'Thai', address_zipcode: '11372'})
+  .count()
+  .then(results => console.log(results));
