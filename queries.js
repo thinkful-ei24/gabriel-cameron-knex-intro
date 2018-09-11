@@ -111,8 +111,15 @@ process.stdout.write('\x1Bc');
 //   .then(console.log);
 
 // Q11
-knex
-  .from('restaurants')
-  .update({ name: 'DJ Reynolds Pub and Restaurant' })
-  .where({ nyc_restaurant_id: '30191841' })
-  .then(result => console.log(result));
+// knex
+//   .from('restaurants')
+//   .update({ name: 'DJ Reynolds Pub and Restaurant' })
+//   .where({ nyc_restaurant_id: '30191841' })
+//   .then(result => console.log(result));
+
+// Q12
+knex  
+  .from('grades')
+  .del()
+  .where({id: 9})
+  .then(console.log);
