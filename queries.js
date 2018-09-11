@@ -10,6 +10,4 @@ process.stdout.write('\x1Bc');
 knex
   .select()
   .from('restaurants')
-  .limit(2)
-  .debug(true)
   .then(results => console.log(results));
